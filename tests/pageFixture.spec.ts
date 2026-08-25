@@ -10,6 +10,7 @@ test("page fixture",async ({page}) => {
 await page.goto("https://www.google.com/")
 //print the title of the page
 console.log(await page.title())
+//print the url of the page
 console.log( page.url())
 
 //verify url using assertions
