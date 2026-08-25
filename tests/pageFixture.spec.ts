@@ -3,7 +3,7 @@ const context=await browser.newContext()      //context
 const page=await context.newPage()            //page
  */
 
-import {test} from "@playwright/test"
+import {test,expect} from "@playwright/test"
 
 test("page fixture",async ({page}) => {
 
@@ -11,5 +11,8 @@ await page.goto("https://www.google.com/")
 //print the title of the page
 console.log(await page.title())
 console.log( page.url())
+
+//verify url using assertions
+await expect(page).toHaveURL("https://www.google.com/")
    
 })
